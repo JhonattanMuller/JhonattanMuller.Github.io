@@ -16,4 +16,24 @@ function selectTab(tabId) {
     // Exibe a aba atual e adiciona a classe "active" ao botão correspondente
     document.getElementById(tabId).style.display = "block";
     event.currentTarget.classList.add("active");
+
+    // Muda o título da aba no navegador conforme a seção
+    var pageTitle;
+    switch (tabId) {
+        case 'quem-sou':
+            pageTitle = 'Quem sou?';
+            break;
+        case 'formacao':
+            pageTitle = 'Formação';
+            break;
+        case 'portfolio':
+            pageTitle = 'Portfólio';
+            break;
+        case 'contato':
+            pageTitle = 'Contato';
+            break;
+        default:
+            pageTitle = 'JhonattanMuller';
+    }
+    document.title = pageTitle;
 }
