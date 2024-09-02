@@ -18,22 +18,30 @@ function selectTab(tabId) {
     event.currentTarget.classList.add("active");
 
     // Muda o título da aba no navegador conforme a seção
-    var pageTitle;
+    var pageTitle, pageURL;
     switch (tabId) {
         case 'quem-sou':
             pageTitle = 'Quem sou?';
+            pageURL = '/quem-sou';
             break;
         case 'formacao':
             pageTitle = 'Formação';
+            pageURL = '/formacao';
             break;
         case 'portfolio':
             pageTitle = 'Portfólio';
+            pageURL = '/portfolio';
             break;
         case 'contato':
             pageTitle = 'Contato';
+            pageURL = '/contato';
             break;
         default:
             pageTitle = 'JhonattanMuller';
+            pageURL = '/';
     }
     document.title = pageTitle;
+
+    // Atualiza o URL na barra de endereços sem recarregar a página
+    history.pushState(null, pageTitle, pageURL);
 }
